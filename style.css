@@ -1,0 +1,238 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(229, 57%, 11%);
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: Raleway, sans-serif;
+  position: relative;
+}
+section {
+  min-width: 50%;
+  min-height: 20%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the rectangle with a progress bar */
+.data {
+  min-height: 7.7rem;
+  min-width: 36rem;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 2.1%;
+  z-index: -2;
+  position: relative;
+  margin: 1px 0% 0% 5rem;
+}
+/* The consumption progress bar  */
+.progress_bar {
+  position: absolute;
+  min-width: 63%;
+  min-height: 10%;
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 9vw;
+  z-index: 3000000;
+  margin: 2.3% 0% 0% 6%;
+}
+.fake_bar {
+  min-width: 85%;
+  min-height: 10%;
+  background: hsl(229, 57%, 11%);
+  border-radius: 6vw;
+  margin: 2.3% 0% 0% 6%;
+  z-index: -1;
+  position: absolute;
+}
+.ball_index {
+  min-width: 0.7em;
+  min-height: 10%;
+  border-radius: 50vw;
+  margin: 2.2% 0% 0% 66.9%;
+  background-color: white;
+  z-index: 90000000000000000000;
+  position: absolute;
+}
+.data .information {
+  margin: 7% 0% 1% 4%;
+  color: hsl(243, 100%, 93%);
+}
+.data .spent {
+  display: flex;
+  justify-content: space-between;
+  margin: 38px 9% 0% 5%;
+  font-size: 81%;
+  font-weight: bold;
+  color: hsl(243, 100%, 93%);
+}
+.gb_left {
+  display: flex;
+  position: absolute;
+  background: #fff;
+  color: #0c122c;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 150px;
+  margin: 15px 10px;
+  top: -40%;
+  left: 62%;
+}
+.gb_left::after {
+  content: "";
+  position: absolute;
+  border-right: 20px solid #fff;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  transform: translate(85px, 38px);
+}
+.gb_left :first-child {
+  font-size: 30px;
+  font-weight: 700;
+}
+.gb_left :last-child {
+  color: #848794;
+  font-weight: 700;
+  font-size: 10px;
+  margin: 12% 0% 0% 5%;
+}
+
+/* The rectangle with the logo */
+.logo {
+  background-color: hsl(228, 56%, 26%);
+  min-width: 17rem;
+  min-height: 11rem;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 80px;
+  position: relative;
+  z-index: -2;
+  margin: 0% 0% 3.2rem 0%;
+}
+/* The Icons */
+.img_logo {
+  margin: 8% 0% 4% 9%;
+  width: 150px;
+}
+.three_images {
+  left: 5%;
+  position: relative;
+  margin-top: 10px;
+}
+.img_document {
+  position: absolute;
+  width: 15px;
+  left: 10%;
+  top: -30%;
+}
+.img_folder {
+  position: absolute;
+  width: 19px;
+  left: 32%;
+}
+.img_download {
+  position: absolute;
+  left: 55%;
+}
+
+/* The icons backgrounds */
+.background1,
+.background2,
+.background3 {
+  background-color: hsl(229, 57%, 11%);
+  height: 15%;
+  width: 8%;
+  z-index: -1;
+  position: absolute;
+}
+.background1 {
+  left: 9%;
+  top: 45%;
+  border-radius: 6px;
+  padding: 8%;
+}
+.background2 {
+  left: 32%;
+  top: 45%;
+  border-radius: 6px;
+  padding: 8%;
+}
+.background3 {
+  left: 56.4%;
+  top: 45%;
+  border-radius: 6px;
+  padding: 8%;
+}
+
+/* The Background Image */
+.bgimg {
+  position: absolute;
+  top: 46%;
+  z-index: -90000000000;
+}
+.bgimg img {
+  width: 100%;
+  height: 53.3vh;
+}
+
+.presentation {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+/* Medias Queries */
+@media screen and (max-width: 950px) {
+  section {
+    flex-direction: column;
+  }
+
+  .logo {
+    min-width: 18rem;
+  }
+  .data {
+    min-width: 18rem;
+    min-height: 8rem;
+    margin-right: 5rem;
+  }
+  .img_logo{
+    margin-bottom: 11%;
+  }
+  .background1, .background2, .background3 {
+    top: 55%;
+  }
+  .logo {
+    margin-bottom: 1rem;
+  }
+  .bgimg img,
+  .gb_left::after {
+    display: none;
+  }
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    overflow: hidden;
+  }
+  .gb_left {
+    top: 65%;
+    left: 15%;
+  }
+  .information {
+    font-size: 0.8rem;
+    text-align: center;
+    transform: translate(-6%);
+  }
+  .progress_bar, .fake_bar, .ball_index {
+    margin-top: 0.7rem;
+
+  }
+}
